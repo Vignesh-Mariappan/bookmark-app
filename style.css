@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+:root {
+  --primary-color: #ee5253;
+  --border-radius: 5px;
+  --font-size-large: 2.5rem;
+  --font-size-medium: 2rem;
+  --font-size-small: 1.5rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: var(--font-size-large);
+  font-weight: 100;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  border-bottom: 1px solid #555;
+}
+
+h2 {
+  font-size: var(--font-size-medium);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px;
+  background-color: #ee5253;
+  color: white;
+  margin: 20px auto;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  width: 18rem;
+}
+
+h2:hover { background-color: #ff6b6b; }
+
+.bookmark-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.item {
+  background-color: rgba(0, 0, 0, .2);
+  color: black;
+  padding: 10px;
+  margin: 10px 5px 10px 10px ;
+  text-align: center;
+  border-radius: var(--border-radius);
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: black;
+  font-size: var(--font-size-small);
+  text-transform: capitalize;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.name img {
+  height: 1.5rem;
+  width: 1.5rem;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+.delete-bookmark {
+  float: right;
+  cursor: pointer;
+  color: black;
+  z-index: 2;
+  font-size: 1.5rem;
+}
+
+.delete-bookmark:hover {
+  color: var(--primary-color);
+}
+
+.name {
+  margin: 10px;
+  padding: 20px
+}
+
+/* Modal */
+.modal-container {
+  background-color: rgba(0, 0, 0, .6);
+  display:none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.show-modal {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.modal {
+  max-width: 95%;
+  width: 500px;
+  box-shadow: rgba(0, 0, 0, .8);
+  background-color: #fff;
+  -webkit-animation: modalshow 1s;
+          animation: modalshow 1s;
+  border-radius: var(--border-radius);
+}
+
+.close-icon {
+  float: right;
+  cursor: pointer;
+  padding-right: 15px;
+  padding-top: 10px;
+  font-size: var(--font-size-small);
+  color: white;
+}
+
+.modal-header {
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-size-medium);
+  font-weight: 100;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: whitesmoke;
+  border-radius: 0 0 var(--border-radius) var(--border-radius); 
+}
+
+.form-group {
+  padding: 20px 20px 10px 20px;
+}
+
+.form-label {
+  display: block;
+  color: var(--primary-color);
+  padding-bottom: 10px;
+  font-size: var(--font-size-small);
+}
+
+.form-input {
+  display: block;
+  width: 95%;
+  padding: 10px;
+  outline: none;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-small);
+}
+
+.form-input:focus {
+  border: 3px solid var(--primary-color);
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  margin: 20px;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff6b6b;
+}
+
+button:focus {
+  outline: none;
+}
+
+@-webkit-keyframes modalshow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalshow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media queries */
+@media screen and (max-width: 650px) {
+  :root {
+    --font-size-large : 2rem;
+    --font-size-medium : 1.8rem;
+    --font-size-small : 1.5rem
+  }
+
+  .bookmark-container {
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
